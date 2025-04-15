@@ -1,17 +1,20 @@
 ﻿using UnityEngine;
+using System;
+using System.Collections.Generic;
 
-public class GameStateMachine : MonoBehaviour
+public class GameStateMachine
 {
-    private IGameState currentState;
-
-    public void ChangeState(IGameState newState)
+    [Inject] private MyContainer _container;
+    private IGameState _currentState;
+    public void ChangeState<T>() where T : IGameState
     {
-        currentState?.Exit();
-        currentState = newState;
-        currentState.Enter(this);
+        _currentState?.Exit();
+        IGameState newState = _container.Resolve<T>();
+        _currentState = newState;
+        _currentState.Enter(this);
     }
-    public void Update()
+    private void Update()
     {
-        currentState?.Update();
+        _currentState?.Update();
     }
 }
