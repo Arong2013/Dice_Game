@@ -20,7 +20,7 @@ public class MyContainer
             Id = id
         });
     }
-    public T Resolve<T>() => (T)Resolve(typeof(T), null);
+    public T Resolve<T>(string id = null) => (T)Resolve(typeof(T), id);
     public object Resolve(Type type, string id = null)
     {
         var binding = _bindings.FirstOrDefault(b => b.InterfaceType == type && b.Id == id);
