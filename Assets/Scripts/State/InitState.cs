@@ -1,4 +1,6 @@
-﻿public class InitState : IGameState
+﻿using UnityEngine;
+
+public class InitState : IGameState
 {
     public void Enter(GameStateMachine stateMachine)
     {

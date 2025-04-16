@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 
-public class GameInitializer : MonoBehaviour
+public static class GameInitializer
 {
-    public static GameInstaller Installer { get; private set; }
 
-    private void Awake()
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    private static void OnGameStart()
     {
-        Installer = new GameInstaller();
+        var Installer = new GameInstaller();
         Installer.Install();
 
         var stateMachine = Installer.Container.Resolve<GameStateMachine>();

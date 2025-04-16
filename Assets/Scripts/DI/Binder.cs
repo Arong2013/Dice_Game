@@ -5,12 +5,10 @@ public class Binder<T>
     private readonly MyContainer _container;
     private Type _implType;
     private string _id;
-
     public Binder(MyContainer container)
     {
         _container = container;
     }
-
     public Binder<T> To<U>() where U : T
     {
         _implType = typeof(U);

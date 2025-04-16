@@ -4,7 +4,6 @@ public enum Lifetime
     Transient,
     Singleton
 }
-
 public class BindingInfo
 {
     public Type InterfaceType;

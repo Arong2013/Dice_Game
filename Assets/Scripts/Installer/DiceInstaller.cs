@@ -1,7 +1,8 @@
-﻿public class DiceInstaller
+﻿using System;
+
+public class DiceInstaller
 {
     private readonly MyContainer _container;
-
     public DiceInstaller(MyContainer container) => _container = container;
 
     public void Install()

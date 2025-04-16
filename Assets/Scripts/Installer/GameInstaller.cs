@@ -7,7 +7,6 @@
         Container = new MyContainer();
         Container.Bind<MyContainer>().ToInstance(Container);
 
-
         new DiceInstaller(Container).Install();
         new StateInstaller(Container).Install();
         new UIInstaller(Container).Install();
