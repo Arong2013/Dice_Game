@@ -6,7 +6,7 @@
     {
         this.stateMachine = stateMachine;
         UnityEngine.Debug.Log("MapEnterState: Enter");
-        stateMachine.ChangeState(new TurnStartState());
+        stateMachine.ChangeState<TurnStartState>();
     }
 
     public void Update()

@@ -11,7 +11,6 @@ public class InjectAttribute : Attribute
         Id = id;
     }
 }
-
 [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
 public class InjectOptionalAttribute : Attribute { }
 

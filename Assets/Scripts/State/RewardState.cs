@@ -8,7 +8,7 @@ public class RewardState : IGameState
         this.stateMachine = stateMachine;
         UnityEngine.Debug.Log("RewardState: Enter");
         // Automatically transition to next state for demonstration
-        stateMachine.ChangeState(new TurnEndState());
+        stateMachine.ChangeState<TurnEndState>();
     }
 
     public void Update()

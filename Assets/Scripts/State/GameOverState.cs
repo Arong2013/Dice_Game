@@ -1,4 +1,5 @@
-﻿public class GameOverState : IGameState
+﻿
+public class GameOverState : IGameState
 {
     private GameStateMachine stateMachine;
 
@@ -7,7 +8,7 @@
         this.stateMachine = stateMachine;
         UnityEngine.Debug.Log("GameOverState: Enter");
         // Automatically transition to next state for demonstration
-        stateMachine.ChangeState(null);
+        stateMachine.ChangeState<CharacterSelectState>();
     }
 
     public void Update()

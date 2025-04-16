@@ -8,7 +8,7 @@ public class TurnEndState : IGameState
         this.stateMachine = stateMachine;
         UnityEngine.Debug.Log("TurnEndState: Enter");
         // Automatically transition to next state for demonstration
-        stateMachine.ChangeState(new GameOverState());
+        stateMachine.ChangeState<GameOverState>();
     }
 
     public void Update()

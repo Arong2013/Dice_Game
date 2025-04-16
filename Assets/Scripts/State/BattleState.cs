@@ -9,7 +9,7 @@ public class BattleState : IGameState
         this.stateMachine = stateMachine;
         UnityEngine.Debug.Log("BattleState: Enter");
         // Automatically transition to next state for demonstration
-        stateMachine.ChangeState(new RewardState());
+        stateMachine.ChangeState<RewardState>();
     }
 
     public void Update()

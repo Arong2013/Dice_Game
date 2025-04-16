@@ -2,7 +2,7 @@
 {
     public void Enter(GameStateMachine stateMachine)
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public void Update()

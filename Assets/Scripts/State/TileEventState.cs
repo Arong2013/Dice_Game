@@ -7,7 +7,7 @@
         this.stateMachine = stateMachine;
         UnityEngine.Debug.Log("TileEventState: Enter");
         // Automatically transition to next state for demonstration
-        stateMachine.ChangeState(new BattleState());
+        stateMachine.ChangeState<BattleState>();
     }
     public void Update()
     {

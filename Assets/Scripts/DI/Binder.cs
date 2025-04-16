@@ -32,4 +32,9 @@ public class Binder<T>
     {
         _container.Register(typeof(T), _implType, Lifetime.Singleton, _id);
     }
+
+    public void ToInstance(T instance, string id = null)
+    {
+        _container.RegisterInstance(typeof(T), instance, id);
+    }
 }

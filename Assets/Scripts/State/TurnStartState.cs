@@ -6,7 +6,7 @@
     {
         this.stateMachine = stateMachine;
         UnityEngine.Debug.Log("TurnStartState: Enter");
-        stateMachine.ChangeState(new DiceRollState());
+        stateMachine.ChangeState<DiceRollState>();
     }
 
     public void Update()

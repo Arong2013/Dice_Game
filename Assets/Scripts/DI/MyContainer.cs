@@ -20,7 +20,6 @@ public class MyContainer
             Id = id
         });
     }
-
     public T Resolve<T>() => (T)Resolve(typeof(T), null);
     public object Resolve(Type type, string id = null)
     {
@@ -38,7 +37,8 @@ public class MyContainer
                       ?? constructors.OrderBy(c => c.GetParameters().Length).FirstOrDefault();
 
         var parameters = injectCtor.GetParameters();
-        var args = parameters.Select(p => {
+        var args = parameters.Select(p => 
+        {
             var attr = p.GetCustomAttribute<InjectAttribute>();
             return Resolve(p.ParameterType, attr?.Id);
         }).ToArray();
@@ -85,5 +85,17 @@ public class MyContainer
         {
             return null;
         }
+    }
+
+    public void RegisterInstance(Type type, object instance, string id = null)
+    {
+        _bindings.Add(new BindingInfo
+        {
+            InterfaceType = type,
+            ImplementationType = instance.GetType(),
+            Lifetime = Lifetime.Singleton,
+            SingletonInstance = instance,
+            Id = id
+        });
     }
 }

@@ -7,7 +7,7 @@
         this.stateMachine = stateMachine;
         UnityEngine.Debug.Log("MoveState: Enter");
         // Automatically transition to next state for demonstration
-        stateMachine.ChangeState(new TileEventState());
+        stateMachine.ChangeState<TileEventState>();
     }
 
     public void Update()

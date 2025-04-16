@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Assets.Scripts.State
+﻿public class CharacterSelectState : IGameState
 {
-    class CharacterSelectState
+    private GameStateMachine stateMachine;
+
+    public void Enter(GameStateMachine stateMachine)
     {
+        this.stateMachine = stateMachine;
+        UnityEngine.Debug.Log("CharacterSelectState: Enter");
+        stateMachine.ChangeState<MapEnterState>();
+    }
+    public void Update()
+    {
+        // DiceRollState logic
+    }
+    public void Exit()
+    {
+        UnityEngine.Debug.Log("CharacterSelectState: Exit");
     }
 }
