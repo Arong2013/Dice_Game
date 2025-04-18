@@ -84,3 +84,9 @@ public interface IHUDUI : IGameUI
     void UpdateStamina(int current, int max);
 }
 
+public interface ISignalBus
+{
+    void Subscribe<T>(Action<T> handler);
+    void Unsubscribe<T>(Action<T> handler);
+    void Fire<T>(T signal);
+}
