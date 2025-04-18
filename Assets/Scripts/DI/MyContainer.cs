@@ -69,14 +69,6 @@ public class MyContainer
                 method.Invoke(instance, null);
         }
 
-        if (_bindings.Any(b => b.ImplementationType == implType) &&
-            implType.GetCustomAttribute<AutoSignalHandlersAttribute>() != null)
-        {
-            var signalBus = TryResolve(typeof(ISignalBus)) as ISignalBus;
-            if (signalBus != null)
-                SignalHandlerBinder.AutoRegisterHandlers(instance, signalBus);
-        }
-
 
         if (binding.Lifetime == Lifetime.Singleton)
             binding.SingletonInstance = instance;

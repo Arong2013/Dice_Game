@@ -4,9 +4,8 @@ using System;
 [Serializable]
 public class CharacterData
 {
-    private string id;
+    private int id;
     private string name;
-    private string job;
     private int hp;
     private int atk;
     private int def;
