@@ -7,6 +7,6 @@
     public void Install()
     {
         _container.Bind<GameStateMachine>().To<GameStateMachine>().AsSingleton();
-        _container.Bind<InitState>().To<InitState>().AsTransient();
+        _container.Bind<IGameState>().To<DiceRollState>().AsTransient();
     }
 }

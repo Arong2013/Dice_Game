@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c34846591f265c4f891824b3494bcd3, type: 3}
   m_Name: "\uC544\uB871\uC774"
   m_EditorClassIdentifier: 
-  id: 1
+  id: 20
   name: "\uC544\uB871\uC774"
   hp: 100

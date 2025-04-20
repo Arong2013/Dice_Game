@@ -16,3 +16,6 @@ public class InjectOptionalAttribute : Attribute { }
 
 [AttributeUsage(AttributeTargets.Method)]
 public class PostInjectAttribute : Attribute { }
+
+[AttributeUsage(AttributeTargets.Class)]
+public class AutoRegisterInContainerAttribute : Attribute { }

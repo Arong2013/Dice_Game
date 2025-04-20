@@ -7,8 +7,6 @@ using System.Reflection;
 public static class DataSOCenter
 {
     private static readonly Dictionary<Type, IDictionary> _typeToDict = new();
-
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     public static void Init()
     {
         // Resources 폴더 안의 모든 ScriptableObject 로드

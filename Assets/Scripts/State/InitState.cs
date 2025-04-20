@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-
 public class InitState : IGameState
 {
     public void Enter(GameStateMachine stateMachine)
@@ -9,12 +8,12 @@ public class InitState : IGameState
 
     public void Update()
     {
-        // InitState logic here
+        
     }
 
     public void Exit()
     {
-        UnityEngine.Debug.Log("InitState: Exit");
+        
     }
 
 }

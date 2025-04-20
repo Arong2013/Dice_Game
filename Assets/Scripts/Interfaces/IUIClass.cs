@@ -57,7 +57,7 @@ public interface IInventoryUI : IGameUI
     void RefreshInventory();
     void SelectItem(int index);
 }
-
+ 
 // 상점 목록, 재화 표시
 public interface IShopUI : IGameUI
 {

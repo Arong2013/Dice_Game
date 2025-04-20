@@ -14,25 +14,17 @@ public class Binder<T>
         _implType = typeof(U);
         return this;
     }
-
     public Binder<T> WithId(string id)
     {
         _id = id;
         return this;
     }
-
     public void AsTransient()
     {
         _container.Register(typeof(T), _implType, Lifetime.Transient, _id);
     }
-
     public void AsSingleton()
     {
         _container.Register(typeof(T), _implType, Lifetime.Singleton, _id);
-    }
-
-    public void ToInstance(T instance, string id = null)
-    {
-        _container.RegisterInstance(typeof(T), instance, id);
     }
 }
