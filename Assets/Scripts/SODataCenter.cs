@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 
-public static class DataSOCenter
+public static class SODataCenter
 {
     private static readonly Dictionary<Type, IDictionary> _typeToDict = new();
     public static void Init()
