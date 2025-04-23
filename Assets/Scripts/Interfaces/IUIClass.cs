@@ -83,4 +83,7 @@ public interface IHUDUI : IGameUI
     void UpdateGold(int amount);
     void UpdateStamina(int current, int max);
 }
-
+public interface ITitleUI : IGameUI
+{
+     event Action OnContinueClicked;
+}
