@@ -8,7 +8,6 @@ public class AutoKeyDictionaryConverter<TKey, TValue> : JsonConverter
     {
         return objectType == typeof(Dictionary<TKey, TValue>);
     }
-
     public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
     {
         var dict = (Dictionary<TKey, TValue>)value;

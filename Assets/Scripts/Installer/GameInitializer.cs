@@ -17,8 +17,8 @@ public static class GameInitializer
         await FirebaseAuthService.InitializeAndLoginAsync();
 
         // ✅ 유저 데이터 준비 (존재 확인 후 로드 or 생성)
-        var handler = new FirebaseUserDataHandler();
-        await handler.PrepareUserData(); // 👈 아래에 있는 유틸리티 함수
+        var handler = new FirebaseUserDataProvider<PlayerProfile>(FirebaseAuthService.UserId);
+        await handler.LoadAsync(FirebaseAuthService.UserId); // 👈 아래에 있는 유틸리티 함수
 
         // ✅ DI 시스템 설치
         var installer = new GameInstaller();
