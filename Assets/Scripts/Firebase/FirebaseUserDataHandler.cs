@@ -2,7 +2,7 @@
 using Firebase;
 using Firebase.Database;
 using UnityEngine;
-using Newtonsoft.Json; 
+using Newtonsoft.Json;
 
 public class FirebaseUserDataHandler
 {
@@ -21,24 +21,41 @@ public class FirebaseUserDataHandler
         {
             Debug.Log("✅ 유저 데이터 로드 완료");
 
-            // 🔁 JSON -> UserData 파싱
+            // 🔁 JSON → PlayerProfile 변환
             string json = snapshot.GetRawJsonValue();
-            UserData user = JsonConvert.DeserializeObject<UserData>(json);
-            Debug.Log($"불러온 유저 이름: {user.username}");
+            PlayerProfile profile = JsonConvert.DeserializeObject<PlayerProfile>(json);
+            Debug.Log($"불러온 캐릭터 ID: {profile.SelectedCharacterId}");
         }
         else
         {
-            var newUser = new UserData
+            // 🔁 신규 플레이어 데이터 생성
+            var newProfile = new PlayerProfile
             {
-                username = "Player_" + uid.Substring(0, 5),
-                email = "guest@example.com"
+                SelectedCharacterId = 1,
+                UnlockedCharacters = new() { 0 },
+                CharacterAffection = new() { { 1, 20 }, { 2, 50 } },
+                EquippedPetId = -1,
+                OwnedPetIds = new() { 3 },
+                PetAffection = new() { { 3, 100 } },
+                PetLevel = new() { { 3, 2 } },
+                UnlockedUpgrades = new(),
+                Achievements = new(),
+                TotalPlayCount = 1,
+                TotalWinCount = 0,
+                TotalDeathCount = 1,
+                Resources = new LobbyResourceData(),
+                PermanentBonus = new PermanentBonusData()
             };
 
-            // 🔁 UserData -> JSON 변환
-            string json = JsonConvert.SerializeObject(newUser);
+            var json = JsonConvert.SerializeObject(newProfile, new JsonSerializerSettings
+            {
+                Formatting = Formatting.Indented,
+                NullValueHandling = NullValueHandling.Include,
+                MissingMemberHandling = MissingMemberHandling.Ignore
+            });
             await _dbRef.Child("Users").Child(uid).SetRawJsonValueAsync(json);
 
-            Debug.Log("✅ 신규 유저 데이터 저장 완료");
+            Debug.Log("✅ 신규 플레이어 데이터 저장 완료");
         }
     }
 }

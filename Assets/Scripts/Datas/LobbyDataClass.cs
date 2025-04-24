@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 [Serializable]
 public class PlayerProfile
@@ -10,13 +11,19 @@ public class PlayerProfile
     // 🧍 캐릭터
     public int SelectedCharacterId;
     public List<int> UnlockedCharacters;
+
+    [JsonConverter(typeof(AutoKeyDictionaryConverter<int,int>))]
     public Dictionary<int, int> CharacterAffection; // 캐릭터 ID ↔ 호감도 수치
 
     // 🐾 펫
     public int EquippedPetId;
     public List<int> OwnedPetIds;
-    public Dictionary<int,int> PetAffection;       // 펫 ID ↔ 호감도 수치
-    public Dictionary<int,int> PetLevel;           // 펫 ID ↔ 강화 레벨
+
+
+    [JsonConverter(typeof(AutoKeyDictionaryConverter<int, int>))]
+    public Dictionary<int, int> PetAffection;       // 펫 ID ↔ 호감도 수치
+    [JsonConverter(typeof(AutoKeyDictionaryConverter<int, int>))]
+    public Dictionary<int, int> PetLevel;           // 펫 ID ↔ 강화 레벨
 
     // 📈 영구 스탯 성장
     public PermanentBonusData PermanentBonus = new();
