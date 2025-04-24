@@ -12,7 +12,6 @@ public class TitleUI : MonoBehaviour, ITitleUI
     {
         _startBtn.onClick.AddListener(() => OnContinueClicked?.Invoke());
     }
-
     public void Show() => gameObject.SetActive(true);
     public void Hide() => gameObject.SetActive(false);
 }
