@@ -13,7 +13,7 @@ public static class FirebaseAuthService
     public static async Task InitializeAndLoginAsync()
     {
         _userId = "TEST_EDITOR_UID_001";
-        Debug.Log($"[Auth] 에디터 고정 UID 사용: {_userId}");
+        Logger.Log($"[Auth] 에디터 고정 UID 사용: {_userId}");
 #if UNITY_EDITOR
         // ✅ 에디터에서는 고정 UID 사용
 
@@ -30,10 +30,4 @@ public static class FirebaseAuthService
         Debug.Log($"[Auth] Firebase 익명 로그인 성공: {_userId}");
 #endif
     }
-}
-[System.Serializable]
-public class UserData
-{
-    public string username;
-    public string email;
 }

@@ -8,24 +8,32 @@ public static class GameInitializer
     {
         _ = InitializeGameAsync(); // fire-and-forget
     }
+
     private static async Task InitializeGameAsync()
     {
-        // ✅ 데이터 시스템 초기화
-        SODataCenter.Init();
+        Logger.SetLogger(message => Debug.Log(message)); 
+        try
+        {
 
-        // ✅ Firebase 로그인
-        await FirebaseAuthService.InitializeAndLoginAsync();
 
-        // ✅ 유저 데이터 준비 (존재 확인 후 로드 or 생성)
-        var handler = new FirebaseUserDataProvider<PlayerProfile>(FirebaseAuthService.UserId);
-        await handler.LoadAsync(FirebaseAuthService.UserId); // 👈 아래에 있는 유틸리티 함수
+            // 1. 게임 내부 초기화
+            SODataCenter.Init();
 
-        // ✅ DI 시스템 설치
-        var installer = new GameInstaller();
-        installer.Install();
+            // 2. Firebase 인증 및 로그인
+            await FirebaseAuthService.InitializeAndLoginAsync();
+            await FirebaseUserDataIO.PreloadAllAsync(); 
 
-        // ✅ 게임 상태 머신 시작
-        var stateMachine = installer.Container.Resolve<GameStateMachine>();
-        stateMachine.ChangeState<IGameState>();
+            var installer = new GameInstaller();
+            installer.Install();
+
+            // 5. 게임 상태 머신 시작
+            var stateMachine = installer.Container.Resolve<GameStateMachine>();
+            stateMachine.ChangeState<IGameState>();
+        }
+        catch (System.Exception ex)
+        {
+            Logger.LogError($"[GameInitializer] 초기화 실패: {ex}");
+            throw;
+        }
     }
 }
