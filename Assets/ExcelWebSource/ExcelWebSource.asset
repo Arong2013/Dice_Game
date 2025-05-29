@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: ExcelWebSource
   m_EditorClassIdentifier: 
   entries:
-  - name: "\uC5D4\uC9C4 \uACFC\uC81C"
-    url: 'https://docs.google.com/spreadsheets/d/1u_XPfh4ePlZgb2O0Ic1hy8oZH56S-5MLotbxYn5naCY/export?format=xlsx
+  - name: "\uB2E4\uC774\uC2A4 \uAC8C\uC784 \uB370\uC774\uD130"
+    url: 'https://docs.google.com/spreadsheets/d/1q2FFJ87dHuNYrjyZ368v_lz2HLbPmccEf1AkJ345L7w/export?format=xlsx
 
 '
+    targetSO: {fileID: 11400000, guid: eeb2a1f49a0714da4b63c00d94ba60bf, type: 2}

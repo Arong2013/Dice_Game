@@ -9,7 +9,7 @@ namespace Auth.Implementation
     // Google 로그인 서비스 구현
     public class GoogleSignInService : BaseSocialAuthService, IGoogleSignInService
     {
-        private GoogleSignInConfiguration _configuration;
+        private GoogleSignInService _configuration;
 
         public GoogleSignInService() : base("Google")
         {

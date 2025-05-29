@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 using Auth.Services;
 using UnityEngine;
-using UnityEngine.Apple.SignInWithApple;
 
 namespace Auth.Implementation
 {

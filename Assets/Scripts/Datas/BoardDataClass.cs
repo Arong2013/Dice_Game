@@ -4,10 +4,10 @@ using System.Collections.Generic;
 [Serializable]
 public class BoardTileData
 {
-    private int index;
-    private string tileType;
-    private string eventID;
-    private string effect;
+     public int index;
+    public string tileType;
+    public string eventID;
+    public string effect;
 }
 [Serializable]
 public class BoardMapData
