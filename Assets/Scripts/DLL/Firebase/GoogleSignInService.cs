@@ -9,7 +9,7 @@ namespace Auth.Implementation
     // Google 로그인 서비스 구현
     public class GoogleSignInService : BaseSocialAuthService, IGoogleSignInService
     {
-        private GoogleSignInService _configuration;
+        private GoogleSignInConfiguration _configuration;
 
         public GoogleSignInService() : base("Google")
         {
@@ -18,11 +18,6 @@ namespace Auth.Implementation
 
         protected override void Initialize()
         {
-            if (_isInitialized) return;
-
-#if UNITY_EDITOR
-            _isInitialized = true;
-#else
             try
             {
                 // Google SignIn SDK 초기화
@@ -30,7 +25,6 @@ namespace Auth.Implementation
                 {
                     RequestIdToken = true,
                     RequestEmail = true,
-                    // 파이어베이스 콘솔에서 웹 클라이언트 ID를 가져와서 설정해야 함
                     WebClientId = "YOUR_FIREBASE_WEB_CLIENT_ID"
                 };
                 
@@ -42,7 +36,6 @@ namespace Auth.Implementation
             {
                 Logger.LogError($"[{_providerName}Auth] 초기화 실패: {ex.Message}");
             }
-#endif
         }
 
         // IGoogleSignInService 인터페이스 구현
@@ -54,9 +47,6 @@ namespace Auth.Implementation
         // 베이스 클래스의 추상 메서드 구현
         protected override async Task<T> ExecuteSignInAsync<T>()
         {
-#if UNITY_EDITOR
-            return CreateEditorMockResult<T>();
-#else
             try
             {
                 // Google 로그인 UI 표시 및 인증 수행
@@ -64,8 +54,9 @@ namespace Auth.Implementation
                 
                 // Task를 await 가능한 형태로 변환
                 var taskCompletionSource = new TaskCompletionSource<GoogleSignInUser>();
-                
-                signInTask.ContinueWith(task => {
+
+                signInTask.ContinueWith(task =>
+                {
                     if (task.IsCanceled)
                     {
                         taskCompletionSource.SetCanceled();
@@ -116,7 +107,6 @@ namespace Auth.Implementation
                 
                 throw; // 재던지기
             }
-#endif
         }
 
         protected override T CreateEditorMockResult<T>()
@@ -139,11 +129,7 @@ namespace Auth.Implementation
 
         public override async Task SignOutAsync()
         {
-            if (!_isInitialized) return;
-
-#if UNITY_EDITOR
             await Task.Delay(100);
-#else
             try
             {
                 // Google 로그아웃
@@ -155,7 +141,6 @@ namespace Auth.Implementation
             {
                 Logger.LogError($"[{_providerName}Auth] 로그아웃 실패: {ex.Message}");
             }
-#endif
         }
     }
 }
