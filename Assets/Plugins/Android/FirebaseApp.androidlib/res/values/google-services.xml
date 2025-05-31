@@ -1,9 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id">
-  <string name="gcm_defaultSenderId" translatable="false">26617182580</string>
-  <string name="google_storage_bucket" translatable="false">dicegame-f25f3.firebasestorage.app</string>
-  <string name="project_id" translatable="false">dicegame-f25f3</string>
-  <string name="google_api_key" translatable="false">AIzaSyCIp231pgWOtTARTX8ojsot0K0gU19AFRQ</string>
-  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCIp231pgWOtTARTX8ojsot0K0gU19AFRQ</string>
-  <string name="google_app_id" translatable="false">1:26617182580:android:36f432091fe02628435421</string>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_android_client_id,@string/default_web_client_id">
+  <string name="gcm_defaultSenderId" translatable="false">434111853481</string>
+  <string name="google_storage_bucket" translatable="false">madhouse-77016.firebasestorage.app</string>
+  <string name="project_id" translatable="false">madhouse-77016</string>
+  <string name="google_api_key" translatable="false">AIzaSyDpVL3kR0_J1uUL1A5DM7QZEdeIxq8fN1w</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDpVL3kR0_J1uUL1A5DM7QZEdeIxq8fN1w</string>
+  <string name="google_app_id" translatable="false">1:434111853481:android:22a7ee7761f437654f0ab8</string>
+  <string name="default_android_client_id" translatable="false">434111853481-r33p8ggv9u7bbq18imc0okbgf7s31l9a.apps.googleusercontent.com</string>
+  <string name="default_web_client_id" translatable="false">434111853481-trko8bii79u519gthcbkhsrup3n3j9d0.apps.googleusercontent.com</string>
 </resources>

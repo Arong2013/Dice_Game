@@ -27,7 +27,7 @@
   </files>
   <settings>
     <setting name="androidAbis" value="arm64-v8a" />
-    <setting name="bundleId" value="com.AlongCompany.com.unity.template.mobile2D" />
+    <setting name="bundleId" value="com.company.Madhouse" />
     <setting name="explodeAars" value="True" />
     <setting name="gradleBuildEnabled" value="True" />
     <setting name="gradlePropertiesTemplateEnabled" value="True" />

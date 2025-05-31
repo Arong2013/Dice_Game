@@ -6,7 +6,7 @@ public static class GameInitializer
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     private static void OnGameStart()
     {
-        _ = InitializeGameAsync(); // fire-and-forget
+      //  _ = InitializeGameAsync(); // fire-and-forget
     }
 
     private static async Task InitializeGameAsync()

@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "434111853481",
+    "project_id": "madhouse-77016",
+    "storage_bucket": "madhouse-77016.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:434111853481:android:22a7ee7761f437654f0ab8",
+        "android_client_info": {
+          "package_name": "com.company.Madhouse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "434111853481-r33p8ggv9u7bbq18imc0okbgf7s31l9a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.company.Madhouse",
+            "certificate_hash": "43e5b694a9ff3e6385ac1b339a87ce9764f0f6b4"
+          }
+        },
+        {
+          "client_id": "434111853481-trko8bii79u519gthcbkhsrup3n3j9d0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpVL3kR0_J1uUL1A5DM7QZEdeIxq8fN1w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "434111853481-trko8bii79u519gthcbkhsrup3n3j9d0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "434111853481-iplt4dosnsaelf56p8e2mn7klhp23219.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.company.Madhouse"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
